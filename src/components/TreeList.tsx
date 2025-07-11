@@ -3,7 +3,7 @@ import type { Tree } from "../models/Tree";
 import { API_URL } from "../utils/api";
 
 export default function TreeList() {
-  const [trees, setTrees] = useState<Tree[] | null>([]);
+  const [trees, setTrees] = useState<Tree[]>([]);
 
   const fetchTrees = async () => {
     try {
@@ -23,14 +23,12 @@ export default function TreeList() {
 
   return (
     <ul>
-      {trees
-        ? trees.map((tree) => (
-            <li key={tree.com_idarbre}>
-              <p>{tree.com_nom_usuel}</p>
-              <img className="img-tree" src={tree.com_url_photo1} />
-            </li>
-          ))
-        : null}
+      {trees.map((tree) => (
+        <li key={tree.com_idarbre}>
+          <p>{tree.com_nom_usuel}</p>
+          <img className="img-tree" src={tree.com_url_photo1} />
+        </li>
+      ))}
     </ul>
   );
 }
