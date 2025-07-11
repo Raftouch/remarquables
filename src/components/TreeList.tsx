@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import type { Tree } from "../models/Tree";
+import { API_URL } from "../utils/api";
 
 export default function TreeList() {
   const [trees, setTrees] = useState<Tree[] | null>([]);
 
   const fetchTrees = async () => {
     try {
-      const response = await fetch(
-        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/arbresremarquablesparis2011/records?limit=20"
-      );
+      const response = await fetch(`${API_URL}?limit=20`);
       const data = await response.json();
       const results = data.results;
       console.log("data : ", results);
