@@ -29,8 +29,30 @@ h1 {
   line-height: 1.1;
 }
 
-.img-tree {
-  width: 200px;
-  height: 200px;
+.tree-img {
+  width: 50px;
+  height: 50px;
+}
+
+.tree-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tree-unit {
+  border: 1px solid;
+  width: 250px;
+  height: 80px;
+}
+
+.pagination {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.pagination:hover {
+  cursor: pointer;
 }
 
