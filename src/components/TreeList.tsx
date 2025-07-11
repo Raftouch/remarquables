@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface Tree {
-  com_idarbre: number;
-  com_nom_latin: string;
-}
+import type { Tree } from "../models/Tree";
 
 export default function TreeList() {
   const [trees, setTrees] = useState<Tree[] | null>([]);
@@ -31,7 +27,8 @@ export default function TreeList() {
       {trees
         ? trees.map((tree) => (
             <li key={tree.com_idarbre}>
-              <p>{tree.com_nom_latin}</p>
+              <p>{tree.com_nom_usuel}</p>
+              <img className="img-tree" src={tree.com_url_photo1} />
             </li>
           ))
         : null}
