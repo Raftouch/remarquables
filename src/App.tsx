@@ -1,5 +1,7 @@
+import Landing from "./pages/Landing";
+
 function App() {
-  return <div>Hexa Map</div>;
+  return <Landing />;
 }
 
 export default App;
