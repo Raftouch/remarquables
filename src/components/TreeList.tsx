@@ -33,6 +33,9 @@ export default function TreeList() {
 
   const paginate = (pageNr: number) => setCurrentPage(pageNr);
 
+  const nextPage = () => setCurrentPage((prev) => prev + 1);
+  const prevPage = () => setCurrentPage((prev) => prev - 1);
+
   return (
     <>
       <ul className="tree-list">
@@ -48,6 +51,17 @@ export default function TreeList() {
         totalResults={trees.length}
         paginate={paginate}
       />
+      <div className="pagination-buttons">
+        <button onClick={prevPage} disabled={currentPage === 1}>
+          Prev
+        </button>
+        <button
+          onClick={nextPage}
+          disabled={currentPage === trees.length / treesPerPage}
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 }

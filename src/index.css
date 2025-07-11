@@ -56,3 +56,8 @@ h1 {
   cursor: pointer;
 }
 
+.pagination-buttons {
+  display: flex;
+  gap: 10px
+}
+
