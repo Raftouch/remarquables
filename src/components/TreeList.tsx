@@ -55,7 +55,7 @@ export default function TreeList() {
           onClick={prevPage}
           disabled={currentPage === 1}
         >
-          Prev
+          ⏮
         </button>
         <Pagination
           resultsPerPage={treesPerPage}
@@ -68,7 +68,7 @@ export default function TreeList() {
           onClick={nextPage}
           disabled={currentPage === trees.length / treesPerPage}
         >
-          Next
+          ⏭
         </button>
       </div>
     </>
