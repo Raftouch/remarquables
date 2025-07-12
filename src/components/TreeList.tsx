@@ -7,14 +7,17 @@ export default function TreeList() {
   const [trees, setTrees] = useState<Tree[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const treesPerPage = 4;
+  const treesPerPage = 20;
 
   const fetchTrees = async () => {
     try {
-      const response = await fetch(`${API_URL}`);
-      const data = await response.json();
-      const results = data.results;
-      console.log("data : ", results);
+      const results: Tree[] = [];
+      for (let offset = 0; offset < 186; offset += 100) {
+        const response = await fetch(`${API_URL}?limit=100&offset=${offset}`);
+        const data = await response.json();
+        //   const results = data.results;
+        results.push(...data.results);
+      }
       setTrees(results);
     } catch (error) {
       console.error("Error fetching trees", error);
