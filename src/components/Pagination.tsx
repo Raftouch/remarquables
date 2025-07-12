@@ -10,7 +10,7 @@ export default function Pagination({
 }: PaginationProps) {
   const pages = [];
 
-  for (let page = 1; page <= totalResults / resultsPerPage; page++) {
+  for (let page = 1; page <= Math.ceil(totalResults / resultsPerPage); page++) {
     pages.push(page);
   }
 
