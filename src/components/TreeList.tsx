@@ -46,16 +46,22 @@ export default function TreeList() {
           </li>
         ))}
       </ul>
-      <Pagination
-        resultsPerPage={treesPerPage}
-        totalResults={trees.length}
-        paginate={paginate}
-      />
-      <div className="pagination-buttons">
-        <button onClick={prevPage} disabled={currentPage === 1}>
+      <div className="pagination__buttons">
+        <button
+          className="btn--prev"
+          onClick={prevPage}
+          disabled={currentPage === 1}
+        >
           Prev
         </button>
+        <Pagination
+          resultsPerPage={treesPerPage}
+          totalResults={trees.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
         <button
+          className="btn--next"
           onClick={nextPage}
           disabled={currentPage === trees.length / treesPerPage}
         >

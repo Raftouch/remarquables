@@ -1,11 +1,13 @@
 interface PaginationProps {
   resultsPerPage: number;
   totalResults: number;
+  currentPage: number;
   paginate: (pageNr: number) => void;
 }
 export default function Pagination({
   resultsPerPage,
   totalResults,
+  currentPage,
   paginate,
 }: PaginationProps) {
   const pages = [];
@@ -17,7 +19,10 @@ export default function Pagination({
   return (
     <ul className="pagination">
       {pages.map((pageNr) => (
-        <li key={pageNr}>
+        <li
+          className={currentPage === pageNr ? "btn--active" : ""}
+          key={pageNr}
+        >
           <button onClick={() => paginate(pageNr)}>{pageNr}</button>
         </li>
       ))}
