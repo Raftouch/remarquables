@@ -1,6 +1,6 @@
 import TreeList from "../components/TreeList";
 
-export default function Landing() {
+export default function LandingPage() {
   return (
     <div>
       <h1>Arbres remarquables de Paris</h1>
