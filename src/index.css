@@ -130,3 +130,7 @@ h1 {
   font-weight: bold;
   border-color: var(--accent-light);
 }
+
+.not-found {
+  text-align: center;
+}
