@@ -1,3 +1,7 @@
+import { useParams } from "react-router-dom";
+
 export default function TreeDetailsPage() {
-  return <div></div>;
+  const { id } = useParams();
+
+  return <div>id : {id}</div>;
 }
