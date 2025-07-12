@@ -17,8 +17,8 @@ export default function Pagination({
   return (
     <ul className="pagination">
       {pages.map((pageNr) => (
-        <li key={pageNr} onClick={() => paginate(pageNr)}>
-          {pageNr}
+        <li key={pageNr}>
+          <button onClick={() => paginate(pageNr)}>{pageNr}</button>
         </li>
       ))}
     </ul>
