@@ -4,6 +4,7 @@ interface PaginationProps {
   currentPage: number;
   paginate: (pageNr: number) => void;
 }
+
 export default function Pagination({
   resultsPerPage,
   totalResults,
