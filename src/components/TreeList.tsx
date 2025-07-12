@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Tree } from "../models/Tree";
 import { API_URL } from "../utils/api";
 import Pagination from "./Pagination";
+import TreeCard from "./TreeCard";
 
 export default function TreeList() {
   const [trees, setTrees] = useState<Tree[]>([]);
@@ -43,10 +44,7 @@ export default function TreeList() {
     <>
       <ul className="tree-list">
         {currentTrees.map((tree) => (
-          <li className="tree-unit" key={tree.com_idarbre}>
-            <p>{tree.com_nom_usuel}</p>
-            <img className="tree-img" src={tree.com_url_photo1} />
-          </li>
+          <TreeCard tree={tree} />
         ))}
       </ul>
       <div className="pagination__buttons">
