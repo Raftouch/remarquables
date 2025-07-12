@@ -46,10 +46,6 @@ h1 {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
   transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
 }
@@ -59,7 +55,16 @@ h1 {
   transform: scale(1.02);
 }
 
-.tree-img {
+.tree-unit .tree-unit__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tree-unit__img {
   width: 60px;
   height: 60px;
   object-fit: cover;
