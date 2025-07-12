@@ -66,7 +66,7 @@ export default function TreeList() {
         <button
           className="btn--next"
           onClick={nextPage}
-          disabled={currentPage === trees.length / treesPerPage}
+          disabled={currentPage === Math.ceil(trees.length / treesPerPage)}
         >
           ⏭
         </button>
