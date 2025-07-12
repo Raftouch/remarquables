@@ -48,6 +48,7 @@ h1 {
   padding: 1rem;
   transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
+  cursor: pointer;
 }
 
 .tree-unit:hover {
