@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TreeDetailsPage from "./pages/TreeDetailsPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
+import { TreesProvider } from "./context/TreesContext.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -14,6 +15,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <TreesProvider>
+      <RouterProvider router={router} />
+    </TreesProvider>
   </StrictMode>
 );
