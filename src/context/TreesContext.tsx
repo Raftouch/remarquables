@@ -35,6 +35,9 @@ export function TreesProvider({ children }: ContextProps) {
           const response = await fetch(`${API_URL}?limit=100&offset=${offset}`);
           const data = await response.json();
           results.push(...data.results);
+          results.sort((a, b) =>
+            a.com_nom_usuel.localeCompare(b.com_nom_usuel)
+          );
         }
         setTrees(results);
       } catch (error) {
