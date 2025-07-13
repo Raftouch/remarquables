@@ -4,7 +4,7 @@ import TreeCard from "./TreeCard";
 import { TreesContext } from "../context/TreesContext";
 
 export default function TreeList() {
-  const { trees } = useContext(TreesContext);
+  const { trees, loading, error } = useContext(TreesContext);
   const [currentPage, setCurrentPage] = useState(1);
 
   const treesPerPage = 20;
@@ -22,33 +22,41 @@ export default function TreeList() {
 
   return (
     <>
-      <ul className="tree-list">
-        {currentTrees.map((tree) => (
-          <TreeCard tree={tree} />
-        ))}
-      </ul>
-      <div className="pagination__buttons">
-        <button
-          className="btn--prev"
-          onClick={prevPage}
-          disabled={currentPage === 1}
-        >
-          ⏮
-        </button>
-        <Pagination
-          resultsPerPage={treesPerPage}
-          totalResults={trees.length}
-          paginate={paginate}
-          currentPage={currentPage}
-        />
-        <button
-          className="btn--next"
-          onClick={nextPage}
-          disabled={currentPage === Math.ceil(trees.length / treesPerPage)}
-        >
-          ⏭
-        </button>
-      </div>
+      {loading ? (
+        <p className="loading">Chargement en cours...</p>
+      ) : error ? (
+        <p className="error">{error}</p>
+      ) : (
+        <>
+          <ul className="tree-list">
+            {currentTrees.map((tree) => (
+              <TreeCard tree={tree} />
+            ))}
+          </ul>
+          <div className="pagination__buttons">
+            <button
+              className="btn--prev"
+              onClick={prevPage}
+              disabled={currentPage === 1}
+            >
+              ⏮
+            </button>
+            <Pagination
+              resultsPerPage={treesPerPage}
+              totalResults={trees.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
+            <button
+              className="btn--next"
+              onClick={nextPage}
+              disabled={currentPage === Math.ceil(trees.length / treesPerPage)}
+            >
+              ⏭
+            </button>
+          </div>
+        </>
+      )}
     </>
   );
 }
