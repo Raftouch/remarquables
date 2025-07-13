@@ -1,33 +1,13 @@
-import { useEffect, useState } from "react";
-import type { Tree } from "../models/Tree";
-import { API_URL } from "../utils/api";
+import { useContext, useState } from "react";
 import Pagination from "./Pagination";
 import TreeCard from "./TreeCard";
+import { TreesContext } from "../context/TreesContext";
 
 export default function TreeList() {
-  const [trees, setTrees] = useState<Tree[]>([]);
+  const { trees } = useContext(TreesContext);
   const [currentPage, setCurrentPage] = useState(1);
 
   const treesPerPage = 20;
-
-  const fetchTrees = async () => {
-    try {
-      const results: Tree[] = [];
-      for (let offset = 0; offset < 186; offset += 100) {
-        const response = await fetch(`${API_URL}?limit=100&offset=${offset}`);
-        const data = await response.json();
-        //   const results = data.results;
-        results.push(...data.results);
-      }
-      setTrees(results);
-    } catch (error) {
-      console.error("Error fetching trees", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchTrees();
-  }, []);
 
   const startIndex = (currentPage - 1) * treesPerPage;
   const endIndex = currentPage * treesPerPage;
