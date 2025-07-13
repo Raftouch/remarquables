@@ -13,4 +13,5 @@ export interface Tree {
   com_resume: string;
   com_descriptif: string;
   com_url_photo1: string;
+  com_copyright1: string;
 }
