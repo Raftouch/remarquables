@@ -4,10 +4,14 @@ import { API_URL } from "../utils/api";
 
 interface TreesContextType {
   trees: Tree[];
+  loading: boolean;
+  error: string | null;
 }
 
 export const TreesContext = createContext<TreesContextType>({
   trees: [],
+  loading: false,
+  error: null,
 });
 
 interface ContextProps {
@@ -16,10 +20,15 @@ interface ContextProps {
 
 export function TreesProvider({ children }: ContextProps) {
   const [trees, setTrees] = useState<Tree[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchTrees = async () => {
       try {
+        setLoading(true);
+        setError(null);
+
         const results: Tree[] = [];
 
         for (let offset = 0; offset <= 186; offset += 100) {
@@ -29,13 +38,18 @@ export function TreesProvider({ children }: ContextProps) {
         }
         setTrees(results);
       } catch (error) {
+        setError("Une erreur est survenue");
         console.error("Error fetching trees", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchTrees();
   }, []);
 
   return (
-    <TreesContext.Provider value={{ trees }}>{children}</TreesContext.Provider>
+    <TreesContext.Provider value={{ trees, loading, error }}>
+      {children}
+    </TreesContext.Provider>
   );
 }
