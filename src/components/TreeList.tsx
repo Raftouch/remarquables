@@ -13,8 +13,6 @@ export default function TreeList() {
   const endIndex = currentPage * treesPerPage;
   const currentTrees = trees.slice(startIndex, endIndex);
 
-  console.log("currentTrees : ", currentTrees);
-
   const paginate = (pageNr: number) => setCurrentPage(pageNr);
 
   const nextPage = () => setCurrentPage((prev) => prev + 1);
