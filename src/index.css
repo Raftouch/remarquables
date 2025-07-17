@@ -223,3 +223,32 @@ h1 {
 .heading__grouped {
   font-size: medium;
 }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  padding-bottom: 2rem;;
+}
+
+.navigation ul {
+  display: flex;
+  justify-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+.navigation ul a {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 20px;
+}
+
+.navigation ul a:hover {
+  background-color: var(--hover-bg);
+}
