@@ -49,6 +49,8 @@ h1 {
   transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
   cursor: pointer;
+  color: var(--text-color);
+  list-style: none;
 }
 
 .tree-unit:hover {
@@ -197,4 +199,59 @@ h1 {
 .error {
   text-align: center;
   color: red;
+}
+
+.leaflet-control-attribution .leaflet-attribution-flag {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+.tree-list__grouped h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tree-list__grouped h3 {
+  color: var(--gold);
+  font-weight: 100;
+  font-size: medium;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading__grouped {
+  font-size: medium;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  padding-bottom: 2rem;;
+}
+
+.navigation ul {
+  display: flex;
+  justify-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+.navigation ul a,
+.navigation span a {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 20px;
+}
+
+.navigation ul a:hover {
+  background-color: var(--hover-bg);
 }
