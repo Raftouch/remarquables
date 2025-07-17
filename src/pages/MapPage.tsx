@@ -23,6 +23,7 @@ export default function MapPage() {
         center={position}
         zoom={13}
         scrollWheelZoom={false}
+        zoomControl={false}
         style={{ width: "100%", height: "100vh" }}
       >
         <TileLayer
