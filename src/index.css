@@ -238,7 +238,8 @@ h1 {
   gap: 10px;
 }
 
-.navigation ul a {
+.navigation ul a,
+.navigation span a {
   text-decoration: none;
   color: inherit;
   border: 1px solid var(--border-color);
