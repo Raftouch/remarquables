@@ -11,7 +11,7 @@ export default function Navigation() {
           <Link to="/grouped">Vue par nom</Link>
         </li>
         <li>
-          <Link to="/on-map">Sur la carte</Link>
+          <Link to="/on-map">Carte</Link>
         </li>
       </ul>
     </nav>
