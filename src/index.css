@@ -49,6 +49,8 @@ h1 {
   transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
   cursor: pointer;
+  color: var(--text-color);
+  list-style: none;
 }
 
 .tree-unit:hover {
