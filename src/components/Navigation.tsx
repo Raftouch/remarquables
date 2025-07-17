@@ -20,6 +20,13 @@ export default function Navigation() {
             Carte
           </Link>
         </li>
+        {isOpen ? (
+          <li>
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              Accueil 🌳
+            </Link>
+          </li>
+        ) : null}
       </ul>
 
       <div
