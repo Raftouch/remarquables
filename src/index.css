@@ -219,3 +219,7 @@ h1 {
   margin-top: 0.8rem;
   margin-bottom: 0.5rem;
 }
+
+.heading__grouped {
+  font-size: medium;
+}
