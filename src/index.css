@@ -198,3 +198,24 @@ h1 {
   text-align: center;
   color: red;
 }
+
+.leaflet-control-attribution .leaflet-attribution-flag {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+.tree-list__grouped h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tree-list__grouped h3 {
+  color: var(--gold);
+  font-weight: 100;
+  font-size: medium;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
