@@ -209,6 +209,12 @@ h1 {
   visibility: hidden !important;
 }
 
+.tree-list__grouped h1 {
+ text-align: start;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .tree-list__grouped h2 {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -254,6 +260,19 @@ h1 {
 
 .navigation__nav a:hover {
   background-color: var(--hover-bg);
+}
+
+.tree-list__grouped-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.tree-list__grouped-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem
 }
 
 .burger-menu {
