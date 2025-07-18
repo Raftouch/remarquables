@@ -256,6 +256,19 @@ h1 {
   background-color: var(--hover-bg);
 }
 
+.tree-list__grouped-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.tree-list__grouped-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
 .burger-menu {
   display: none;
   position: relative;
