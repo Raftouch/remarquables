@@ -38,12 +38,12 @@ export default function GroupedTrees() {
   return (
     <>
       {Object.entries(treesGroupedByLetter).map(([letter, treesInGroup]) => (
-        <div key={letter}>
+        <div className="tree-list__grouped" key={letter}>
           <h1>{letter}</h1>
 
           {Object.entries(groupBy(treesInGroup, "com_nom_usuel")).map(
             ([treeName, treesGrouped]) => (
-              <div className="tree-list__grouped" key={treeName}>
+              <div key={treeName}>
                 <div
                   className="tree-list__grouped-head"
                   onClick={() => handleClick(treeName)}

@@ -209,6 +209,12 @@ h1 {
   visibility: hidden !important;
 }
 
+.tree-list__grouped h1 {
+ text-align: start;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .tree-list__grouped h2 {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
