@@ -11,8 +11,7 @@ export default function GroupedTrees() {
     Record<string, boolean>
   >({});
 
-  const treesGroupedByName = groupBy(trees, "com_nom_usuel");
-  console.log(treesGroupedByName);
+  // const treesGroupedByName = groupBy(trees, "com_nom_usuel");
 
   const treesGroupedByLetter = trees.reduce<Record<string, Tree[]>>(
     (acc, tree) => {
